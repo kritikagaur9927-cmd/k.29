@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>for my bhondulaal ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#faf3f6;
+  color:#44373e;
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+}
+
+/* LOADING */
+
+#loader{
+  position:fixed;
+  inset:0;
+  background:#faf3f6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  transition:opacity .8s ease, visibility .8s ease;
+}
+
+#loader.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
+.loader{
+  text-align:center;
+  animation:floatIn 1.5s ease infinite alternate;
+}
+
+.loader span{
+  display:block;
+  font-size:13px;
+  color:#a26d83;
+  letter-spacing:1px;
+  margin-top:8px;
+}
+
+@keyframes floatIn{
+  to{transform:translateY(-8px);}
+}
+
+
+/* FLOATING DECOR */
+
+.decor{
+  position:fixed;
+  pointer-events:none;
+  z-index:0;
+  animation:floatUp linear infinite;
+  opacity:.5;
+}
+
+.d1{left:8%;bottom:-30px;animation-duration:8s;}
+.d2{left:25%;bottom:-30px;animation-duration:10s;animation-delay:2s;}
+.d3{left:48%;bottom:-30px;animation-duration:7s;animation-delay:4s;}
+.d4{left:72%;bottom:-30px;animation-duration:9s;animation-delay:1s;}
+.d5{left:90%;bottom:-30px;animation-duration:11s;animation-delay:3s;}
+
+@keyframes floatUp{
+  0%{
+    transform:translateY(0) rotate(0);
+    opacity:0;
+  }
+  20%{opacity:.5;}
+  100%{
+    transform:translateY(-110vh) rotate(180deg);
+    opacity:0;
+  }
+}
+
+
+/* MAIN */
+
+.page{
+  width:100%;
+  max-width:720px;
+  margin:auto;
+  padding:28px 18px 70px;
+  position:relative;
+  z-index:2;
+}
+
+.date{
+  text-align:center;
+  color:#a47789;
+  font-size:11px;
+  letter-spacing:3px;
+  margin-bottom:55px;
+}
+
+
+/* HERO */
+
+.hero{
+  min-height:470px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero .mini{
+  font-size:14px;
+  color:#9c7182;
+  animation:fadeUp 1s ease;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(58px,16vw,100px);
+  font-weight:500;
+  letter-spacing:-5px;
+  color:#4b3b43;
+  margin:8px 0;
+  animation:fadeUp 1.3s ease;
+}
+
+.hero h1 span{
+  color:#a86d85;
+  font-style:italic;
+}
+
+.hero p{
+  max-width:430px;
+  margin:10px auto;
+  line-height:1.8;
+  color:#74656d;
+  animation:fadeUp 1.6s ease;
+}
+
+.paw{
+  font-size:26px;
+  margin-top:22px;
+  animation:bounce 2s infinite;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes bounce{
+  50%{transform:translateY(8px) rotate(5deg);}
+}
+
+
+/* IMAGE */
+
+.cat-photo{
+  margin:30px auto 5px;
+  width:min(88%,330px);
+  padding:10px 10px 18px;
+  background:#fff;
+  box-shadow:0 18px 35px rgba(80,55,68,.13);
+  transform:rotate(-2deg);
+  transition:.5s ease;
+}
+
+.cat-photo:hover{
+  transform:rotate(1deg) scale(1.03);
+}
+
+.cat-photo img{
+  width:100%;
+  height:270px;
+  object-fit:cover;
+  display:block;
+}
+
+.cat-photo p{
+  font-family:'Playfair Display',serif;
+  font-size:15px;
+  text-align:center;
+  color:#8f6578;
+  margin-top:12px;
+}
+
+
+/* SECTIONS */
+
+.section{
+  margin-top:34px;
+  padding:32px 24px;
+  background:rgba(255,255,255,.62);
+  border:1px solid rgba(255,255,255,.95);
+  border-radius:26px;
+  box-shadow:0 18px 50px rgba(91,64,78,.07);
+
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+
+.section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.label{
+  color:#aa7187;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+
+.section h2{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:31px;
+  margin-bottom:16px;
+  color:#4b3b43;
+}
+
+.section p{
+  font-size:15px;
+  line-height:1.85;
+  color:#685b62;
+}
+
+
+/* FUNNY LIST */
+
+.list{
+  display:grid;
+  gap:11px;
+  margin-top:20px;
+}
+
+.item{
+  background:#fff9fb;
+  padding:15px 16px;
+  border-radius:17px;
+  transition:.3s ease;
+}
+
+.item:hover{
+  transform:translateX(7px);
+  box-shadow:0 7px 20px rgba(100,70,85,.08);
+}
+
+
+/* CAT ROW */
+
+.cat-row{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  margin-top:22px;
+}
+
+.mini-cat{
+  background:#fff;
+  padding:8px 8px 13px;
+  box-shadow:0 10px 25px rgba(80,55,68,.1);
+  transition:.4s ease;
+}
+
+.mini-cat:nth-child(1){
+  transform:rotate(2deg);
+}
+
+.mini-cat:nth-child(2){
+  transform:rotate(-2deg);
+}
+
+.mini-cat:hover{
+  transform:rotate(0) translateY(-5px);
+}
+
+.mini-cat img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.mini-cat p{
+  text-align:center;
+  font-size:12px;
+  margin-top:9px;
+  color:#927080;
+}
+
+
+/* BUTTON */
+
+.secret-btn{
+  border:0;
+  margin-top:20px;
+  padding:13px 22px;
+  border-radius:30px;
+  background:#4b3b43;
+  color:white;
+  font-family:inherit;
+  cursor:pointer;
+  transition:.3s ease;
+}
+
+.secret-btn:hover{
+  transform:translateY(-3px) scale(1.03);
+  background:#765667;
+}
+
+#secret{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:.7s ease;
+}
+
+#secret.open{
+  max-height:200px;
+  opacity:1;
+  margin-top:22px;
+}
+
+
+/* END */
+
+.ending{
+  text-align:center;
+  padding:110px 10px 20px;
+}
+
+.ending .small{
+  color:#a86d85;
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+.ending h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(38px,10vw,55px);
+  font-weight:500;
+  color:#4b3b43;
+  margin:16px 0;
+}
+
+.ending h2 span{
+  color:#a86d85;
+  font-style:italic;
+}
+
+.ending p{
+  max-width:440px;
+  margin:auto;
+  line-height:1.8;
+  color:#70636a;
+}
+
+.signature{
+  margin-top:38px;
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  color:#a86d85;
+  font-size:18px;
+}
+
+.footer{
+  text-align:center;
+  margin-top:55px;
+  font-size:11px;
+  color:#b6a4ad;
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+  .section{
+    padding:28px 20px;
+  }
+
+  .cat-photo img{
+    height:250px;
+  }
+
+  .mini-cat img{
+    height:145px;
+  }
+
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- loading -->
+
+<div id="loader">
+  <div class="loader">
+    🐈
+    <span>just for my bhondulaal...</span>
+  </div>
+</div>
+
+
+<!-- floating -->
+
+<div class="decor d1">♡</div>
+<div class="decor d2">✦</div>
+<div class="decor d3">🐾</div>
+<div class="decor d4">♡</div>
+<div class="decor d5">✧</div>
+
+
+<main class="page">
+
+<div class="date">03 · 10 · 2026 ♡</div>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="mini">this is for you, pagal 🐈</div>
+
+  <h1>hey <span>Kunal</span></h1>
+
+  <p>
+    yes bhondulaal...
+    <br>
+    I actually made a whole website for you 😭🎀
+  </p>
+
+  <div class="cat-photo">
+
+    <img
+      src="https://images.pexels.com/photos/5263844/pexels-photo-5263844.jpeg?auto=compress&cs=tinysrgb&w=900"
+      alt="cute cat"
+    >
+
+    <p>literally us... one of us is the bhondu 😭</p>
+
+  </div>
+
+  <div class="paw">🐾 ♡ 🐾</div>
+
+</section>
+
+
+<!-- BF DAY -->
+
+<section class="section reveal">
+
+  <div class="label">bf day 🎀</div>
+
+  <h2>happy bf day, cutu ♡</h2>
+
+  <p>
+    Okay jaanu, first of all don't let this website
+    get to your head 😭
+    <br><br>
+
+    I just wanted to make something cute for you
+    because you're genuinely special to me.
+    <br><br>
+
+    You're annoying, pagal, sometimes a complete bhondu...
+    but somehow you're still my favourite person to annoy back 🫶🏻
+  </p>
+
+</section>
+
+
+<!-- ALLEGATIONS -->
+
+<section class="section reveal">
+
+  <div class="label">bhondulaal allegations 🧸</div>
+
+  <h2>things you're guilty of</h2>
+
+  <div class="list">
+
+    <div class="item">
+      🐈 making me smile at my phone like an idiot
+    </div>
+
+    <div class="item">
+      🎀 being annoying and still being my cutu
+    </div>
+
+    <div class="item">
+      😭 randomly appearing in my thoughts
+    </div>
+
+    <div class="item">
+      🐾 making me call you pagal 500 times a day
+    </div>
+
+    <div class="item">
+      💗 giving me a reason to make this stupidly cute website
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CATS -->
+
+<section class="section reveal">
+
+  <div class="label">important evidence 🐱</div>
+
+  <h2>some cuteness for my jaanu</h2>
+
+  <div class="cat-row">
+
+    <div class="mini-cat">
+      <img
+        src="https://images.pexels.com/photos/18848682/pexels-photo-18848682.jpeg?auto=compress&cs=tinysrgb&w=700"
+        alt="white kitten"
+      >
+      <p>cutu behaviour 🎀</p>
+    </div>
+
+    <div class="mini-cat">
+      <img
+        src="https://images.pexels.com/photos/11132157/pexels-photo-11132157.jpeg?auto=compress&cs=tinysrgb&w=700"
+        alt="cute kitten"
+      >
+      <p>literally you, bhondu 😭</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- REAL MESSAGE -->
+
+<section class="section reveal">
+
+  <div class="label">okay jaanu, serious for a sec ♡</div>
+
+  <h2>actually though...</h2>
+
+  <p>
+    Jokes apart, I really do appreciate you.
+    <br><br>
+
+    I appreciate the random conversations,
+    the laughs, the stupid little moments
+    and everything in between.
+    <br><br>
+
+    I may call you bhondu, pagal and bhondulaal
+    approximately 500 times a day 😭
+    but you know I mean it with love.
+    <br><br>
+
+    You're genuinely very special to me, cutu. 🫶🏻
+  </p>
+
+</section>
+
+
+<!-- SECRET -->
+
+<section class="section reveal">
+
+  <div class="label">secret for my pagal 👀</div>
+
+  <h2>don't click this</h2>
+
+  <p>
+    There's literally nothing here.
+    Trust me, bhondu.
+  </p>
+
+  <button class="secret-btn" onclick="openSecret()">
+    okay fine... click it 🐾
+  </button>
+
+  <div id="secret">
+
+    <p>
+      okayyy you caught me 😭💗
+      <br><br>
+
+      I like you a lot, jaanu.
+      <br>
+
+      happy bf day, my bhondulaal 🐈🎀
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- END -->
+
+<section class="ending reveal">
+
+  <div class="small">03 · 10 · 2026</div>
+
+  <h2>
+    happy <span>BF Day</span>, Kunal ♡
+  </h2>
+
+  <p>
+    Stay the same, keep annoying me,
+    keep being my stupid little bhondu
+    and please don't let this website
+    make your ego bigger 😭
+    <br><br>
+
+    love you, cutu 🫶🏻🐾
+  </p>
+
+  <div class="signature">
+    — from your favourite person 🎀
+  </div>
+
+</section>
+
+
+<div class="footer">
+  made with love for one very special bhondulaal ♡
+</div>
+
+</main>
+
+
+<script>
+
+/* loader */
+
+window.addEventListener("load", () => {
+
+  setTimeout(() => {
+    document.getElementById("loader").classList.add("hide");
+  },900);
+
+});
+
+
+/* scroll animations */
+
+const sections = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries) => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+
+  });
+
+},{threshold:.15});
+
+sections.forEach(section => observer.observe(section));
+
+
+/* secret */
+
+function openSecret(){
+
+  const secret = document.getElementById("secret");
+
+  secret.classList.toggle("open");
+
+}
+
+</script>
+
+</body>
+</html>
